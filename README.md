@@ -72,7 +72,11 @@ Os ícones ficam em `src/components/ui/Icon.astro`. Os de WhatsApp e Instagram s
 
 ## Publicação
 
-O build gera um site estático em `dist/`, que pode ir para qualquer hospedagem estática (Cloudflare Pages, Netlify, Vercel). Use o comando de build `bun run build` e a pasta de saída `dist`. O endereço canônico é `https://marinholocacoes.com`. Se o domínio mudar, atualize `site` em `astro.config.mjs`.
+O site é publicado no Cloudflare Workers como um Worker só de arquivos estáticos. A cada push na `main`, o Cloudflare roda `bun run build` e depois `npx wrangler deploy`, que envia o `dist/` conforme o `wrangler.jsonc`. O `name` em `wrangler.jsonc` precisa ser igual ao nome do Worker no painel.
+
+O site é 100% estático. Não adicione o adapter `@astrojs/cloudflare`, que só serve para renderização no servidor.
+
+O endereço canônico é `https://marinholocacoes.com`. Se o domínio mudar, atualize `site` em `astro.config.mjs`.
 
 ## Marca
 

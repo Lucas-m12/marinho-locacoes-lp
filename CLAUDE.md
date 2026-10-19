@@ -10,6 +10,12 @@ Página única, estática, de locação de equipamentos para obra em Cajueiro (A
 - `bun run preview`: serve o `dist/` gerado.
 - `bun run check`: só a checagem de tipos.
 
+## Publicação
+
+- Cloudflare Workers, como Worker só de arquivos estáticos, com build automático a cada push na `main`: `bun run build`, depois `npx wrangler deploy`.
+- `wrangler.jsonc` publica o `dist/`. Sem esse arquivo, o wrangler tenta se configurar sozinho e o deploy falha. O `name` precisa ser igual ao nome do Worker no painel (`marinho-locacoes-lp`).
+- Não adicione o adapter `@astrojs/cloudflare` nem um `main` no `wrangler.jsonc`: o site é estático e não precisa de servidor.
+
 ## Onde fica cada coisa
 
 - `src/content/site.ts`: todos os textos, links, dados de contato e fotos. Conteúdo se edita só aqui, nunca direto nos componentes.
