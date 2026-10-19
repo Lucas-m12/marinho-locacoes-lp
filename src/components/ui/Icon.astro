@@ -1,5 +1,5 @@
 ---
-export type NomeIcone = 'whatsapp' | 'instagram' | 'site' | 'local' | 'menu' | 'fechar';
+export type NomeIcone = 'whatsapp' | 'instagram' | 'site' | 'local' | 'menu' | 'fechar' | 'documento';
 
 interface Props {
   name: NomeIcone;
@@ -60,6 +60,14 @@ const acessibilidade = label
   }
   {name === 'menu' && <path d="M3 6h18M3 12h18M3 18h18" />}
   {name === 'fechar' && <path d="M5 5l14 14M19 5L5 19" />}
+  {
+    name === 'documento' && (
+      <>
+        <path d="M6 3h8l4 4v14H6z" />
+        <path d="M14 3v4h4M9 12h6M9 16h6" />
+      </>
+    )
+  }
 </svg>
 
 <style>

@@ -23,6 +23,7 @@ Página única, estática, de locação de equipamentos para obra em Cajueiro (A
 - `src/components/`: uma seção por arquivo, na ordem do design. `src/components/ui/`: `Icon`, `Foto`, `Botao`, `TituloSecao`, `Faixa`.
 - `src/pages/`: `index.astro` e os arquivos gerados no build (`og.png`, `apple-touch-icon.png`, `favicon.ico`, `favicon.svg`, `robots.txt`). O sitemap vem do `@astrojs/sitemap`.
 - `src/assets/marca/`: cópia exata dos SVGs de `referencia/assets/`. Não edite, não recolora, não redesenhe.
+- `public/`: `politica-de-troca.pdf` e `politica-de-caucao-e-documentos.pdf`, servidos em `/politica-de-troca.pdf` e `/politica-de-caucao-e-documentos.pdf`. São gerados fora do site: não edite, não comprima, não renomeie. Para atualizar, troque o arquivo inteiro pelo novo, com o mesmo nome.
 - `referencia/`: design aprovado. É a fonte da verdade do layout e dos textos.
 
 ## Regras da marca
@@ -61,7 +62,9 @@ Fonte Archivo (variável, eixos `wdth` e `wght`), via Google Fonts:
 ## Conteúdo: não inventar dados
 
 - Não invente preços, endereço, horários, depoimentos, números nem municípios.
-- Os marcadores pendentes ficam visíveis até o cliente mandar o dado real: `[FOTO: …]`, `[MAPA: …]`, `[MUNICÍPIOS]`, `[CONDIÇÕES DE ENTREGA]`, `[TABELA DE PREÇOS]`, `[REGRAS DE CAUÇÃO E DOCUMENTOS]`, `[POLÍTICA DE TROCA]`.
+- Os marcadores pendentes ficam visíveis até o cliente mandar o dado real: `[FOTO: …]`, `[MAPA: …]`, `[MUNICÍPIOS]`, `[CONDIÇÕES DE ENTREGA]`, `[TABELA DE PREÇOS]`.
+- Já resolvidos: `[REGRAS DE CAUÇÃO E DOCUMENTOS]` e `[POLÍTICA DE TROCA]`. As respostas estão no FAQ (`duvidas` em `src/content/site.ts`), cada uma com link para o PDF da política em `public/`.
+- Pergunta do FAQ pode ter `link` (`rotulo` + `href`), que aparece num parágrafo próprio abaixo da resposta, com o ícone `documento`, em nova aba (`target="_blank"`, `rel="noopener"`, `type="application/pdf"`).
 - Nunca descreva a empresa como "ferramentas e andaimes": o catálogo vai crescer. Use "equipamentos para obra".
 - Não existe loja aberta. Todo pedido é pelo WhatsApp: todos os botões de orçamento apontam para `contato.whatsapp` (https://wa.me/5582999636057), com `target="_blank"` e `rel="noopener"`. Use o componente `<Botao>`.
 - O JSON-LD `LocalBusiness` leva só o que é real: nome, telefone, url, `areaServed` e `sameAs` (Instagram).
@@ -92,10 +95,10 @@ O componente `Foto` troca o placeholder por um `<img>` otimizado do `astro:asset
 
 ## Ícones
 
-`<Icon name="whatsapp | instagram | site | local | menu | fechar">`, em `src/components/ui/Icon.astro`. A cor vem sempre de `currentColor`.
+`<Icon name="whatsapp | instagram | site | local | menu | fechar | documento">`, em `src/components/ui/Icon.astro`. A cor vem sempre de `currentColor`.
 
 - `whatsapp` e `instagram`: glifos oficiais das marcas, em uma cor só. Os desenhos vêm do Simple Icons (CC0, v16.35.0), sem alteração. O `ajusteMarca` (`translate(1.5 1.5) scale(0.875)`) só reduz o glifo para 21/24 do quadro, para ele ter o mesmo tamanho visual dos ícones de linha. Não redesenhe, não distorça e não use o degradê do Instagram (a marca não usa degradês).
-- `site`, `local`, `menu`, `fechar`: SVG de linha, traço 2,2 (2,4 nos botões), pontas retas.
+- `site`, `local`, `menu`, `fechar`, `documento`: SVG de linha, traço 2,2 (2,4 nos botões), pontas retas.
 
 ## Antes de entregar
 

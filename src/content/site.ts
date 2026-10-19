@@ -12,6 +12,12 @@ export type Link = {
   href: string;
 };
 
+export type Pergunta = {
+  pergunta: string;
+  resposta: string;
+  link?: Link;
+};
+
 export const empresa = {
   nome: 'Marinho Locações',
   areaAtendida: 'Cajueiro, AL e região',
@@ -187,14 +193,23 @@ export const duvidas = {
     },
     {
       pergunta: 'Precisa de caução ou documento?',
-      resposta: '[REGRAS DE CAUÇÃO E DOCUMENTOS]',
+      resposta:
+        'Sim. A gente pede um documento com foto e o CPF de quem aluga (empresa: CNPJ e documento do responsável) e o endereço da obra. A caução é paga em Pix ou dinheiro antes da entrega, com o valor informado no orçamento, e volta em até 24 horas depois da devolução do equipamento.',
+      link: {
+        rotulo: 'Ver a política de caução e documentos (PDF)',
+        href: '/politica-de-caucao-e-documentos.pdf',
+      },
     },
     {
       pergunta: 'E se o equipamento der problema?',
       resposta:
-        'Todo equipamento é revisado antes de sair. Se acontecer alguma coisa, chame no WhatsApp. [POLÍTICA DE TROCA]',
+        'Todo equipamento é revisado antes de sair e conferido na entrega, na frente de quem recebe. Se der defeito durante o uso, pare de usar e chame no WhatsApp: a gente troca ou conserta sem custo, o mais rápido possível, e os dias parados não entram na conta. Quebra por mau uso, perda ou furto ficam por conta do cliente, com orçamento mostrado antes.',
+      link: {
+        rotulo: 'Ver a política de troca completa (PDF)',
+        href: '/politica-de-troca.pdf',
+      },
     },
-  ],
+  ] satisfies Pergunta[],
 };
 
 export const chamadaFinal = {

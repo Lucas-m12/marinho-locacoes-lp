@@ -1,4 +1,5 @@
 ---
+import Icon from './ui/Icon.astro';
 import TituloSecao from './ui/TituloSecao.astro';
 import { duvidas } from '../content/site';
 ---
@@ -16,7 +17,23 @@ import { duvidas } from '../content/site';
                 +
               </span>
             </summary>
-            <p class="pergunta__resposta">{item.resposta}</p>
+            <div class="pergunta__corpo">
+              <p class="pergunta__resposta">{item.resposta}</p>
+              {item.link && (
+                <p class="pergunta__documento">
+                  <a
+                    class="pergunta__link"
+                    href={item.link.href}
+                    target="_blank"
+                    rel="noopener"
+                    type="application/pdf"
+                  >
+                    <Icon name="documento" size={18} />
+                    {item.link.rotulo}
+                  </a>
+                </p>
+              )}
+            </div>
           </details>
         ))
       }
@@ -74,11 +91,29 @@ import { duvidas } from '../content/site';
     rotate: 45deg;
   }
 
-  .pergunta__resposta {
+  .pergunta__corpo {
     margin: 10px 0 18px;
+  }
+
+  .pergunta__resposta {
     font-size: 16px;
     line-height: 1.55;
     color: var(--cor-texto-apoio);
+  }
+
+  .pergunta__documento {
+    margin-top: 6px;
+  }
+
+  .pergunta__link {
+    min-height: var(--alvo-toque);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    vertical-align: top;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
   }
 
   @media (min-width: 768px) {
@@ -101,10 +136,26 @@ import { duvidas } from '../content/site';
       font-size: 28px;
     }
 
+    .pergunta__corpo {
+      margin: 12px 0 22px;
+    }
+
     .pergunta__resposta {
       max-width: 720px;
-      margin: 12px 0 22px;
       font-size: 18px;
+    }
+
+    .pergunta__documento {
+      margin-top: 8px;
+    }
+
+    .pergunta__link {
+      font-size: 18px;
+    }
+
+    .pergunta__link :global(.icone) {
+      width: 20px;
+      height: 20px;
     }
   }
 </style>

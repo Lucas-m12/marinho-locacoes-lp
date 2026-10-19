@@ -49,7 +49,8 @@ Use os textos exatamente como estão nos arquivos de referência.
 - Coloque todos os textos, links e dados em um único arquivo (por exemplo, `src/content/site.ts`) para eu poder editar sem mexer no layout.
 
 ## Pendências (não invente nada)
-- Mantenha visíveis os marcadores [FOTO: …], [MAPA: …], [MUNICÍPIOS], [CONDIÇÕES DE ENTREGA], [TABELA DE PREÇOS], [REGRAS DE CAUÇÃO E DOCUMENTOS] e [POLÍTICA DE TROCA].
+- Mantenha visíveis os marcadores [FOTO: …], [MAPA: …], [MUNICÍPIOS], [CONDIÇÕES DE ENTREGA] e [TABELA DE PREÇOS].
+- [REGRAS DE CAUÇÃO E DOCUMENTOS] e [POLÍTICA DE TROCA] já foram resolvidos: o FAQ tem as respostas e os links para `public/politica-de-caucao-e-documentos.pdf` e `public/politica-de-troca.pdf`. Os PDFs são gerados fora do site: não edite, não comprima e não renomeie.
 - Não invente preços, endereço, horários, depoimentos nem números.
 - Fotos: crie um componente que mostra a caixa de placeholder com a descrição quando não houver imagem, e um `<img>` otimizado (astro:assets, com width, height e alt) quando eu passar o arquivo.
 
