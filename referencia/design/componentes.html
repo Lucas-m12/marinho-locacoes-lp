@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Botões, links, campos e cartões</title>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;display=swap">
+<style>
+body{margin:0;background:#F2E8D7}
+a{color:#B4532A}a:hover{color:#13294B}
+</style>
+</helmet>
+<div style="width: 1200px; box-sizing: border-box; padding: 64px; display: flex; flex-direction: column; gap: 48px; background: #F2E8D7; font-family: Archivo, 'Helvetica Neue', Helvetica, sans-serif; color: #13294B">
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <div style="width: 72px; height: 12px; background: #B4532A"></div>
+    <h1 style="margin: 0; font-stretch: 75%; font-weight: 800; font-size: 56px; line-height: 0.95">Botões, links, campos e cartões</h1>
+    <p style="margin: 0; font-size: 17px; line-height: 1.5; color: #5E544C">Estilos do site e de qualquer tela da marca. Uma ação principal por tela: o WhatsApp.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px">
+    <div style="box-sizing: border-box; padding: 32px; border-radius: 14px; background: #FBF6EC; display: flex; flex-direction: column; gap: 22px">
+      <span style="font-stretch: 75%; font-weight: 700; font-size: 16px; letter-spacing: 0.16em; text-transform: uppercase">Botões</span>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px">
+        <a href="#" style="box-sizing: border-box; min-height: 52px; padding: 14px 24px; border-radius: 12px; background: #B4532A; display: inline-flex; align-items: center; gap: 10px; font-size: 18px; font-weight: 700; color: #FBF6EC; text-decoration: none">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FBF6EC" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path></svg>
+          Pedir orçamento no WhatsApp
+        </a>
+        <a href="#" style="box-sizing: border-box; min-height: 52px; padding: 14px 24px; border-radius: 12px; background: #13294B; display: inline-flex; align-items: center; font-size: 18px; font-weight: 700; color: #FBF6EC; text-decoration: none">Ver equipamentos</a>
+        <a href="#" style="box-sizing: border-box; min-height: 52px; padding: 12px 22px; border-radius: 12px; border: 2px solid #13294B; display: inline-flex; align-items: center; font-size: 18px; font-weight: 700; color: #13294B; text-decoration: none">Como funciona</a>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <div style="height: 48px; border-radius: 12px; background: #B4532A; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #FBF6EC">Normal</div>
+          <span style="font-size: 13px; color: #5E544C">#B4532A</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <div style="height: 48px; border-radius: 12px; background: #943F1E; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #FBF6EC">Passar o mouse</div>
+          <span style="font-size: 13px; color: #5E544C">#943F1E</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <div style="height: 48px; border-radius: 12px; background: #B4532A; outline: 3px solid #13294B; outline-offset: 3px; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #FBF6EC">Foco</div>
+          <span style="font-size: 13px; color: #5E544C">Contorno azul 3 px</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <div style="height: 48px; border-radius: 12px; background: #E3D6BF; display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 700; color: #5E544C">Desativado</div>
+          <span style="font-size: 13px; color: #5E544C">#E3D6BF</span>
+        </div>
+      </div>
+      <div style="box-sizing: border-box; padding: 24px; border-radius: 12px; background: #13294B; display: flex; flex-wrap: wrap; gap: 12px">
+        <a href="#" style="box-sizing: border-box; min-height: 52px; padding: 14px 24px; border-radius: 12px; background: #B4532A; display: inline-flex; align-items: center; font-size: 18px; font-weight: 700; color: #FBF6EC; text-decoration: none">Em fundo azul</a>
+        <a href="#" style="box-sizing: border-box; min-height: 52px; padding: 12px 22px; border-radius: 12px; border: 2px solid #FBF6EC; display: inline-flex; align-items: center; font-size: 18px; font-weight: 700; color: #FBF6EC; text-decoration: none">Secundário claro</a>
+      </div>
+      <span style="font-size: 15px; line-height: 1.5; color: #5E544C">Altura mínima 48 px (56 px no topo da página) · cantos 12 px · Archivo 700, 18 px · sem sombra.</span>
+
+      <div style="height: 1px; background: #E3D6BF"></div>
+      <span style="font-stretch: 75%; font-weight: 700; font-size: 16px; letter-spacing: 0.16em; text-transform: uppercase">Links</span>
+      <p style="margin: 0; font-size: 18px; line-height: 1.55">Em fundo creme, o link fica em terracota: <a href="#" style="color: #B4532A; font-weight: 600; text-underline-offset: 4px">ver condições de entrega</a>. Em fundo areia, use azul: <a href="#" style="color: #13294B; font-weight: 600; text-underline-offset: 4px">perguntas frequentes</a>.</p>
+      <div style="box-sizing: border-box; padding: 18px 24px; border-radius: 12px; background: #13294B; font-size: 18px; line-height: 1.55; color: #C9D2DF">Em fundo azul, terracota claro: <a href="#" style="color: #E58A5F; font-weight: 600; text-underline-offset: 4px">falar no WhatsApp</a>.</div>
+      <span style="font-size: 15px; line-height: 1.5; color: #5E544C">Sempre sublinhado. Ao passar o mouse, o link vira azul-marinho (ou creme, no fundo azul).</span>
+    </div>
+
+    <div style="box-sizing: border-box; padding: 32px; border-radius: 14px; background: #FBF6EC; display: flex; flex-direction: column; gap: 22px">
+      <span style="font-stretch: 75%; font-weight: 700; font-size: 16px; letter-spacing: 0.16em; text-transform: uppercase">Campos</span>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <label for="c-nome" style="font-size: 16px; font-weight: 600">Seu nome</label>
+        <input id="c-nome" type="text" placeholder="Como podemos te chamar" style="box-sizing: border-box; height: 52px; padding: 0 16px; border-radius: 12px; border: 2px solid #5E544C; background: #FBF6EC; font-family: inherit; font-size: 17px; color: #13294B">
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <label for="c-whats" style="font-size: 16px; font-weight: 600">WhatsApp com DDD</label>
+        <input id="c-whats" type="tel" value="(DDD) 9 0000-0000" style="box-sizing: border-box; height: 52px; padding: 0 16px; border-radius: 12px; border: 2px solid #13294B; outline: 3px solid #E58A5F; outline-offset: 2px; background: #FBF6EC; font-family: inherit; font-size: 17px; color: #13294B">
+        <span style="font-size: 14px; color: #5E544C">Foco: borda azul e contorno terracota claro.</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <label for="c-equip" style="font-size: 16px; font-weight: 600">Equipamento</label>
+        <select id="c-equip" style="box-sizing: border-box; height: 52px; padding: 0 14px; border-radius: 12px; border: 2px solid #5E544C; background: #FBF6EC; font-family: inherit; font-size: 17px; color: #13294B">
+          <option>Andaimes</option>
+          <option>Escoras de laje</option>
+          <option>Ferramentas elétricas</option>
+          <option>Carrocinha</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <label for="c-dias" style="font-size: 16px; font-weight: 600">Por quantos dias?</label>
+        <input id="c-dias" type="text" aria-invalid="true" aria-describedby="c-dias-erro" style="box-sizing: border-box; height: 52px; padding: 0 16px; border-radius: 12px; border: 2px solid #B4532A; background: #FBF6EC; font-family: inherit; font-size: 17px; color: #13294B">
+        <span id="c-dias-erro" style="display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #B4532A"><span style="width: 8px; height: 8px; flex: none; background: #B4532A"></span>Diga quantos dias, mesmo que seja uma estimativa.</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <label for="c-obs" style="font-size: 16px; font-weight: 600">O que você precisa?</label>
+        <textarea id="c-obs" rows="3" placeholder="Ex.: pintura da fachada, dois andares" style="box-sizing: border-box; padding: 14px 16px; border-radius: 12px; border: 2px solid #5E544C; background: #FBF6EC; font-family: inherit; font-size: 17px; line-height: 1.5; color: #13294B; resize: vertical"></textarea>
+      </div>
+      <span style="font-size: 15px; line-height: 1.5; color: #5E544C">Rótulo sempre visível acima do campo · altura 52 px · cantos 12 px · borda 2 px #5E544C · erro em terracota com texto explicando o que fazer.</span>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 20px">
+    <span style="font-stretch: 75%; font-weight: 700; font-size: 16px; letter-spacing: 0.16em; text-transform: uppercase">Cartões</span>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px">
+      <div style="border-radius: 14px; overflow: hidden; background: #FBF6EC; display: flex; flex-direction: column">
+        <div style="height: 150px; box-sizing: border-box; padding: 16px; background: #E9DCC4; display: flex; align-items: center; justify-content: center; text-align: center; font-stretch: 75%; font-weight: 600; font-size: 15px; color: #5E544C">[FOTO: equipamento]</div>
+        <div style="box-sizing: border-box; padding: 22px 24px; display: flex; flex-direction: column; gap: 8px">
+          <span style="font-stretch: 75%; font-weight: 700; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #B4532A">Equipamento</span>
+          <span style="font-stretch: 75%; font-weight: 800; font-size: 28px; line-height: 1">Escoras de laje</span>
+          <a href="#" style="font-size: 16px; font-weight: 700; color: #13294B; text-underline-offset: 4px">Pedir no WhatsApp</a>
+        </div>
+        <div style="display: flex; height: 12px"><div style="flex: 3 1 0; background: #13294B"></div><div style="flex: 1 1 0; background: #B4532A"></div></div>
+      </div>
+      <div style="border-radius: 14px; overflow: hidden; background: #FBF6EC; display: flex; flex-direction: column">
+        <div style="flex: 1 1 auto; box-sizing: border-box; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+          <div style="width: 52px; height: 52px; background: #13294B; display: flex; align-items: center; justify-content: center; font-stretch: 75%; font-weight: 800; font-size: 28px; color: #FBF6EC">01</div>
+          <span style="font-stretch: 75%; font-weight: 800; font-size: 28px; line-height: 1">Passo</span>
+          <span style="font-size: 16px; line-height: 1.5; color: #5E544C">Número em quadrado azul, título condensado e texto curto.</span>
+        </div>
+        <div style="display: flex; height: 12px"><div style="flex: 3 1 0; background: #13294B"></div><div style="flex: 1 1 0; background: #B4532A"></div></div>
+      </div>
+      <div style="box-sizing: border-box; padding: 24px; border-radius: 14px; background: #13294B; display: flex; flex-direction: column; justify-content: space-between; gap: 12px">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <div style="display: flex; align-items: center; gap: 12px"><span style="width: 12px; height: 12px; flex: none; background: #E58A5F"></span><span style="font-stretch: 75%; font-weight: 800; font-size: 26px; line-height: 1.05; color: #FBF6EC">Destaque em fundo azul</span></div>
+          <span style="font-size: 16px; line-height: 1.5; color: #C9D2DF">Para diferenciais e chamadas. Texto secundário em #C9D2DF.</span>
+        </div>
+        <span style="font-size: 14px; color: #C9D2DF">Cantos 14 px · sem borda · sem sombra</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1200,"height":1700}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
