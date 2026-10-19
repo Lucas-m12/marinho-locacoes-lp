@@ -1,0 +1,135 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--cor-azul);
+  color: var(--cor-azul);
+  font-family: var(--fonte);
+  font-stretch: var(--largura-texto);
+}
+
+main {
+  background: var(--cor-areia);
+}
+
+h1,
+h2,
+h3,
+p,
+ol,
+ul,
+figure {
+  margin: 0;
+}
+
+ol,
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--cor-terracota);
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  color: var(--cor-azul);
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+:focus-visible {
+  outline: var(--foco-espessura) solid var(--foco-cor);
+  outline-offset: var(--foco-afastamento);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--conteudo-largura);
+  margin-inline: auto;
+  padding-inline: var(--margem-lateral);
+}
+
+.secao {
+  padding-block: 56px;
+}
+
+@media (min-width: 768px) {
+  .secao {
+    padding-block: 96px;
+  }
+}
+
+.fundo-escuro {
+  --foco-cor: var(--cor-creme);
+}
+
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.pular-conteudo {
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  z-index: 100;
+  min-height: var(--alvo-toque);
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--raio-botao);
+  background: var(--cor-terracota);
+  color: var(--cor-creme);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  --foco-cor: var(--cor-creme);
+  translate: 0 calc(-100% - 20px);
+}
+
+.pular-conteudo:focus {
+  translate: 0 0;
+}
+
+.pular-conteudo:hover {
+  color: var(--cor-creme);
+  background: var(--cor-terracota-hover);
+}

@@ -1,0 +1,74 @@
+---
+interface Props {
+  id: string;
+  titulo: string;
+  texto?: string;
+  fundo?: 'claro' | 'azul';
+  solto?: boolean;
+}
+
+const { id, titulo, texto, fundo = 'claro', solto = false } = Astro.props;
+---
+
+<div class:list={['titulo-secao', `titulo-secao--${fundo}`, { 'titulo-secao--solto': solto }]}>
+  <span class="titulo-secao__barra" aria-hidden="true"></span>
+  <h2 id={id} class="titulo-secao__titulo">{titulo}</h2>
+  {texto && <p class="titulo-secao__texto">{texto}</p>}
+</div>
+
+<style>
+  .titulo-secao {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .titulo-secao--solto {
+    display: contents;
+  }
+
+  .titulo-secao__barra {
+    display: block;
+    width: 56px;
+    height: 10px;
+    background: var(--cor-terracota);
+  }
+
+  .titulo-secao--azul .titulo-secao__barra {
+    background: var(--cor-terracota-claro);
+  }
+
+  .titulo-secao__titulo {
+    font-stretch: var(--largura-titulo);
+    font-weight: 800;
+    font-size: 44px;
+    line-height: 0.95;
+  }
+
+  .titulo-secao__texto {
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--cor-texto-apoio);
+  }
+
+  @media (min-width: 768px) {
+    .titulo-secao {
+      gap: 16px;
+    }
+
+    .titulo-secao__barra {
+      width: 72px;
+      height: 12px;
+    }
+
+    .titulo-secao__titulo {
+      font-size: clamp(44px, 5vw, 72px);
+    }
+
+    .titulo-secao__texto {
+      max-width: 620px;
+      font-size: 19px;
+      line-height: 1.55;
+    }
+  }
+</style>

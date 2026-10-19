@@ -1,0 +1,254 @@
+---
+import Foto from './ui/Foto.astro';
+import TituloSecao from './ui/TituloSecao.astro';
+import { contato, equipamentos } from '../content/site';
+---
+
+<section id="equipamentos" class="equipamentos" aria-labelledby="equipamentos-titulo">
+  <div class="equipamentos__conteudo container secao">
+    <TituloSecao id="equipamentos-titulo" titulo={equipamentos.titulo} texto={equipamentos.texto} />
+    <ul class="equipamentos__lista" role="list">
+      {
+        equipamentos.itens.map((item) => (
+          <li class="equip">
+            <div class="equip__foto">
+              <Foto foto={item.foto} variante="equipamento" />
+            </div>
+            <div class="equip__corpo">
+              <h3 class="equip__nome">{item.nome}</h3>
+              <p class="equip__texto">{item.texto}</p>
+              <a class="equip__link" href={contato.whatsapp} target="_blank" rel="noopener">
+                <span class="equip__link-texto">{equipamentos.link}</span>
+              </a>
+            </div>
+          </li>
+        ))
+      }
+      <li class="equip equip--outros">
+        <div class="equip__corpo">
+          <h3 class="equip__nome">{equipamentos.outros.titulo}</h3>
+          <p class="equip__texto">{equipamentos.outros.texto}</p>
+          <a class="equip__link" href={contato.whatsapp} target="_blank" rel="noopener">
+            <span class="equip__link-texto">{equipamentos.outros.link}</span>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .equipamentos {
+    background: var(--cor-creme);
+  }
+
+  .equipamentos__conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .equip {
+    position: relative;
+    display: flex;
+    border-radius: var(--raio-cartao);
+    background: var(--cor-areia);
+  }
+
+  .equip__foto {
+    flex: none;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .equip__corpo {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .equip__nome {
+    font-stretch: var(--largura-titulo);
+    font-weight: 800;
+    line-height: 1;
+    overflow-wrap: break-word;
+  }
+
+  .equip__texto {
+    color: var(--cor-texto-apoio);
+  }
+
+  .equip__link {
+    color: var(--cor-azul);
+  }
+
+  .equip__link::after {
+    content: '';
+    position: absolute;
+  }
+
+  .equip--outros {
+    background: var(--cor-azul);
+    color: var(--cor-creme);
+  }
+
+  .equip--outros .equip__texto {
+    color: var(--cor-texto-apoio-no-azul);
+  }
+
+  .equip--outros .equip__link {
+    color: var(--cor-terracota-claro);
+  }
+
+  @media (max-width: 767.98px) {
+    .equipamentos__lista {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .equip__foto {
+      width: 104px;
+      border-radius: var(--raio-cartao) 0 0 var(--raio-cartao);
+    }
+
+    .equip__corpo {
+      padding: 16px 18px;
+      gap: 6px;
+    }
+
+    .equip__nome {
+      font-size: 26px;
+    }
+
+    .equip__texto {
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .equip__link {
+      position: absolute;
+      inset: 0;
+      border-radius: var(--raio-cartao);
+      text-decoration: none;
+    }
+
+    .equip__link-texto {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .equip__link::after {
+      inset: 0;
+      border-radius: var(--raio-cartao);
+    }
+
+    .equip__link:focus-visible {
+      outline: none;
+    }
+
+    .equip__link:focus-visible::after {
+      outline: var(--foco-espessura) solid var(--cor-azul);
+      outline-offset: var(--foco-afastamento);
+    }
+
+    .equip--outros .equip__corpo {
+      padding: 18px 20px;
+    }
+
+    .equip--outros .equip__texto {
+      display: none;
+    }
+
+    .equip--outros .equip__link {
+      position: static;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .equip--outros .equip__link-texto {
+      position: static;
+      width: auto;
+      height: auto;
+      overflow: visible;
+      clip-path: none;
+      white-space: normal;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .equipamentos__conteudo {
+      gap: 48px;
+    }
+
+    .equipamentos__lista {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+      gap: 20px;
+    }
+
+    .equip {
+      flex-direction: column;
+    }
+
+    .equip__foto {
+      height: 180px;
+      border-radius: var(--raio-cartao) var(--raio-cartao) 0 0;
+    }
+
+    .equip__corpo {
+      padding: 24px;
+      gap: 10px;
+    }
+
+    .equip__nome {
+      font-size: 30px;
+    }
+
+    .equip__texto {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .equip__link {
+      position: relative;
+      margin-top: auto;
+      padding-top: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      text-underline-offset: 4px;
+    }
+
+    .equip__link::after {
+      inset: 50% 0 auto;
+      height: var(--alvo-toque);
+      translate: 0 -50%;
+    }
+
+    .equip__link:hover {
+      color: var(--cor-azul);
+      text-decoration-thickness: 2px;
+    }
+
+    .equip--outros {
+      --foco-cor: var(--cor-creme);
+    }
+
+    .equip--outros .equip__corpo {
+      justify-content: flex-end;
+    }
+
+    .equip--outros .equip__link {
+      margin-top: 0;
+    }
+
+    .equip--outros .equip__link:hover {
+      color: var(--cor-creme);
+    }
+  }
+</style>

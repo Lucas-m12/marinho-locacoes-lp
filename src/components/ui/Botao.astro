@@ -1,0 +1,93 @@
+---
+import Icon from './Icon.astro';
+import { contato } from '../../content/site';
+
+interface Props {
+  tamanho: 'compacto' | 'grande' | 'final';
+  variante?: 'terracota' | 'azul';
+  icone?: boolean;
+  class?: string;
+}
+
+const { tamanho, variante = 'terracota', icone = true, class: className } = Astro.props;
+---
+
+<a
+  class:list={['botao', `botao--${variante}`, `botao--${tamanho}`, className]}
+  href={contato.whatsapp}
+  target="_blank"
+  rel="noopener"
+>
+  {icone && <Icon name="whatsapp" size={20} strokeWidth={2.4} />}
+  <slot />
+</a>
+
+<style>
+  .botao {
+    min-height: var(--alvo-toque);
+    display: inline-flex;
+    align-items: center;
+    border-radius: var(--raio-botao);
+    background: var(--cor-terracota);
+    color: var(--cor-creme);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .botao:hover {
+    background: var(--cor-terracota-hover);
+    color: var(--cor-creme);
+  }
+
+  .botao--azul {
+    background: var(--cor-azul);
+  }
+
+  .botao--azul:hover {
+    background: var(--cor-azul-grade);
+  }
+
+  .botao--compacto {
+    display: flex;
+    padding: 10px 18px;
+    font-size: 16px;
+  }
+
+  .botao--grande,
+  .botao--final {
+    min-height: 56px;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .botao--grande,
+    .botao--final {
+      display: inline-flex;
+      justify-content: flex-start;
+      gap: 12px;
+      text-align: start;
+    }
+
+    .botao--grande {
+      padding: 16px 28px;
+      font-size: 19px;
+    }
+
+    .botao--final {
+      min-height: 60px;
+      padding: 18px 30px;
+      font-size: 20px;
+    }
+
+    .botao--grande :global(.icone),
+    .botao--final :global(.icone) {
+      width: 22px;
+      height: 22px;
+    }
+  }
+</style>

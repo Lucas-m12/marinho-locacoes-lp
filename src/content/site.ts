@@ -1,0 +1,208 @@
+import type { ImageMetadata } from 'astro';
+
+export type Foto = {
+  marcador: string;
+  marcadorCelular?: string;
+  imagem?: ImageMetadata;
+  alt: string;
+};
+
+export type Link = {
+  rotulo: string;
+  href: string;
+};
+
+export const empresa = {
+  nome: 'Marinho Locações',
+  areaAtendida: 'Cajueiro, AL e região',
+};
+
+export const contato = {
+  telefone: '(82) 99963-6057',
+  telefoneInternacional: '+55 82 99963-6057',
+  whatsapp: 'https://wa.me/5582999636057',
+  instagram: {
+    usuario: '@marinho_locacoes12',
+    url: 'https://www.instagram.com/marinho_locacoes12/',
+  },
+  site: 'marinholocacoes.com',
+};
+
+export const seo = {
+  titulo: 'Locação de equipamentos para obra em Cajueiro, AL · Marinho Locações',
+  descricao:
+    'Locação de equipamentos para obra em Cajueiro, AL e região: andaimes, escoras de laje, ferramentas elétricas, carrocinha e mais. Entrega e coleta na obra. Orçamento pelo WhatsApp.',
+  imagemAlt: 'Logo da Marinho Locações sobre fundo azul-marinho',
+};
+
+export const acessibilidade = {
+  pularParaConteudo: 'Pular para o conteúdo',
+  inicio: 'Marinho Locações, início',
+  menu: 'Menu',
+  navegacao: 'Principal',
+  logo: 'Marinho Locações',
+};
+
+export const cabecalho = {
+  links: [
+    { rotulo: 'Como funciona', href: '#como-funciona' },
+    { rotulo: 'Equipamentos', href: '#equipamentos' },
+    { rotulo: 'Área atendida', href: '#area' },
+    { rotulo: 'Dúvidas', href: '#duvidas' },
+  ] satisfies Link[],
+  botao: 'Pedir orçamento',
+};
+
+export const topo = {
+  local: 'Cajueiro e região',
+  titulo: 'Alugue o que sua obra precisa.',
+  texto:
+    'Andaimes, escoras de laje, ferramentas elétricas, carrocinha e o que mais a obra precisar. Tudo revisado, com entrega e coleta na obra.',
+  botao: 'Pedir orçamento no WhatsApp',
+  linkSecundario: { rotulo: 'Ver como funciona', href: '#como-funciona' } satisfies Link,
+  foto: {
+    marcador: '[FOTO: andaime montado em obra da região, luz natural]',
+    marcadorCelular: '[FOTO: andaime montado em obra da região]',
+    alt: 'Andaime montado em obra da região',
+  } satisfies Foto,
+};
+
+export const comoFunciona = {
+  titulo: 'Como funciona',
+  texto: 'Três passos, tudo pelo WhatsApp. Sem loja e sem fila.',
+  passos: [
+    {
+      numero: '01',
+      titulo: 'Escolha',
+      texto:
+        'Mande no WhatsApp o que você precisa e por quantos dias. A gente confirma se está disponível e passa o valor.',
+    },
+    {
+      numero: '02',
+      titulo: 'Receba na obra',
+      texto: 'No dia combinado, a gente leva até a sua obra. Todo equipamento sai revisado.',
+    },
+    {
+      numero: '03',
+      titulo: 'Devolva',
+      texto:
+        'Terminou o serviço? Avise no WhatsApp e a gente busca na obra. Toda ferramenta volta conferida.',
+    },
+  ],
+};
+
+export const equipamentos = {
+  titulo: 'Equipamentos',
+  texto: 'O catálogo está crescendo. Não achou o que precisa? Pergunte no WhatsApp.',
+  link: 'Pedir no WhatsApp',
+  itens: [
+    {
+      nome: 'Andaimes',
+      texto: 'Para pintura, reboco e fachada.',
+      foto: {
+        marcador: '[FOTO: andaime montado]',
+        marcadorCelular: '[FOTO]',
+        alt: 'Andaime montado',
+      },
+    },
+    {
+      nome: 'Escoras de laje',
+      texto: 'Vai bater laje? Alugue as escoras.',
+      foto: {
+        marcador: '[FOTO: escoras sob a forma da laje]',
+        marcadorCelular: '[FOTO]',
+        alt: 'Escoras sob a forma da laje',
+      },
+    },
+    {
+      nome: 'Ferramentas elétricas',
+      texto: 'Para o serviço de poucos dias, sem precisar comprar.',
+      foto: {
+        marcador: '[FOTO: ferramenta elétrica em uso]',
+        marcadorCelular: '[FOTO]',
+        alt: 'Ferramenta elétrica em uso',
+      },
+    },
+    {
+      nome: 'Carrocinha',
+      texto: 'Para levar material até a obra.',
+      foto: {
+        marcador: '[FOTO: carrocinha engatada]',
+        marcadorCelular: '[FOTO]',
+        alt: 'Carrocinha engatada',
+      },
+    },
+  ] satisfies { nome: string; texto: string; foto: Foto }[],
+  outros: {
+    titulo: 'E o que mais a obra precisar',
+    texto: 'Diga o serviço e a gente vê o que tem para você.',
+    link: 'Perguntar no WhatsApp',
+  },
+};
+
+export const diferenciais = {
+  titulo: 'Por que alugar com a Marinho',
+  itens: [
+    {
+      titulo: 'Revisado antes de cada locação',
+      texto: 'Toda ferramenta sai testada e volta conferida.',
+    },
+    {
+      titulo: 'Atendimento direto da família',
+      texto: 'Você fala com quem cuida do equipamento, pelo WhatsApp.',
+    },
+    {
+      titulo: 'Entrega e coleta na obra',
+      texto: 'A gente leva no dia combinado e busca quando o serviço terminar.',
+    },
+  ],
+};
+
+export const areaAtendida = {
+  titulo: 'Área atendida',
+  regiao: 'Cajueiro e região',
+  texto: 'A obra fica fora dessa área ? Pergunte no WhatsApp antes de desistir.',
+  mapa: {
+    marcador: '[MAPA: área atendida a partir de Cajueiro]',
+    alt: 'Mapa da área atendida a partir de Cajueiro',
+  } satisfies Foto,
+};
+
+export const duvidas = {
+  titulo: 'Perguntas frequentes',
+  perguntas: [
+    {
+      pergunta: 'Como faço para alugar?',
+      resposta: `Mande uma mensagem no WhatsApp ${contato.telefone} dizendo o equipamento e por quantos dias. A gente confirma se está disponível e passa o valor.`,
+    },
+    {
+      pergunta: 'Vocês entregam na obra?',
+      resposta:
+        'Sim. A entrega e a coleta são feitas na obra, em Cajueiro e região.',
+    },
+    {
+      pergunta: 'Quanto custa?',
+      resposta:
+        'Depende do equipamento e do tempo de uso. Peça o orçamento pelo WhatsApp.',
+    },
+    {
+      pergunta: 'Precisa de caução ou documento?',
+      resposta: '[REGRAS DE CAUÇÃO E DOCUMENTOS]',
+    },
+    {
+      pergunta: 'E se o equipamento der problema?',
+      resposta:
+        'Todo equipamento é revisado antes de sair. Se acontecer alguma coisa, chame no WhatsApp. [POLÍTICA DE TROCA]',
+    },
+  ],
+};
+
+export const chamadaFinal = {
+  titulo: 'Precisa de equipamento para a obra?',
+  botao: 'Pedir orçamento no WhatsApp',
+};
+
+export const rodape = {
+  descricao: 'Locação de equipamentos para obra · Cajueiro, Alagoas',
+  aviso: 'Atendimento sem loja aberta: tudo pelo WhatsApp.',
+};

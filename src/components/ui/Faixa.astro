@@ -1,0 +1,43 @@
+---
+interface Props {
+  variante: 'topo' | 'cartao';
+}
+
+const { variante } = Astro.props;
+---
+
+<div class:list={['faixa', `faixa--${variante}`]} aria-hidden="true">
+  <span class="faixa__azul"></span>
+  <span class="faixa__terracota"></span>
+</div>
+
+<style>
+  .faixa {
+    display: flex;
+    height: 10px;
+  }
+
+  .faixa--topo {
+    height: 12px;
+  }
+
+  .faixa__azul {
+    flex: 3 1 0;
+    background: var(--cor-azul);
+  }
+
+  .faixa__terracota {
+    flex: 1 1 0;
+    background: var(--cor-terracota);
+  }
+
+  @media (min-width: 768px) {
+    .faixa {
+      height: 12px;
+    }
+
+    .faixa--topo {
+      height: 16px;
+    }
+  }
+</style>

@@ -1,0 +1,163 @@
+---
+import Botao from './ui/Botao.astro';
+import Icon from './ui/Icon.astro';
+import logo from '../assets/marca/marinho-logo-negativo.svg';
+import { acessibilidade, cabecalho } from '../content/site';
+---
+
+<header class="cabecalho fundo-escuro">
+  <div class="cabecalho__barra container">
+    <a class="cabecalho__logo" href="#topo" aria-label={acessibilidade.inicio}>
+      <img src={logo.src} width={logo.width} height={logo.height} alt={acessibilidade.logo} />
+    </a>
+
+    <nav aria-label={acessibilidade.navegacao}>
+      <div class="cabecalho__links">
+        {
+          cabecalho.links.map((link) => (
+            <a class="cabecalho__link" href={link.href}>
+              {link.rotulo}
+            </a>
+          ))
+        }
+        <Botao tamanho="compacto" icone={false}>{cabecalho.botao}</Botao>
+      </div>
+
+      <details class="cabecalho__menu">
+        <summary class="cabecalho__abrir" aria-label={acessibilidade.menu}>
+          <Icon name="menu" strokeWidth={2.4} class="cabecalho__icone-menu" />
+          <Icon name="fechar" strokeWidth={2.4} class="cabecalho__icone-fechar" />
+        </summary>
+        <div class="cabecalho__painel">
+          {
+            cabecalho.links.map((link) => (
+              <a class="cabecalho__link" href={link.href}>
+                {link.rotulo}
+              </a>
+            ))
+          }
+          <Botao tamanho="grande" class="cabecalho__botao-painel">{cabecalho.botao}</Botao>
+        </div>
+      </details>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .cabecalho {
+    position: relative;
+    z-index: 10;
+    background: var(--cor-azul);
+  }
+
+  .cabecalho__barra {
+    height: 64px;
+    padding: 0 12px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cabecalho__logo {
+    min-height: var(--alvo-toque);
+    display: flex;
+    align-items: center;
+  }
+
+  .cabecalho__logo img {
+    width: 168px;
+    height: 35px;
+  }
+
+  .cabecalho__links {
+    display: none;
+  }
+
+  .cabecalho__link {
+    color: var(--cor-creme);
+    text-decoration: none;
+  }
+
+  .cabecalho__link:hover {
+    color: var(--cor-creme);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
+  .cabecalho__abrir {
+    width: var(--alvo-toque);
+    height: var(--alvo-toque);
+    border-radius: var(--raio-botao);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-creme);
+  }
+
+  .cabecalho__menu :global(.cabecalho__icone-fechar),
+  .cabecalho__menu[open] :global(.cabecalho__icone-menu) {
+    display: none;
+  }
+
+  .cabecalho__menu[open] :global(.cabecalho__icone-fechar) {
+    display: block;
+  }
+
+  .cabecalho__painel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 8px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--cor-azul-grade);
+    background: var(--cor-azul);
+  }
+
+  .cabecalho__painel .cabecalho__link {
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--cor-azul-grade);
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .cabecalho__painel :global(.cabecalho__botao-painel) {
+    margin-top: 24px;
+  }
+
+  @media (min-width: 768px) {
+    .cabecalho__barra {
+      height: auto;
+      padding: 20px 32px;
+      flex-wrap: wrap;
+      gap: 16px 32px;
+    }
+
+    .cabecalho__logo img {
+      width: 212px;
+      height: 44px;
+    }
+
+    .cabecalho__links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 28px;
+    }
+
+    .cabecalho__links .cabecalho__link {
+      min-height: var(--alvo-toque);
+      display: inline-flex;
+      align-items: center;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .cabecalho__menu {
+      display: none;
+    }
+  }
+</style>

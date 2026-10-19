@@ -1,0 +1,116 @@
+---
+import Faixa from './ui/Faixa.astro';
+import TituloSecao from './ui/TituloSecao.astro';
+import { comoFunciona } from '../content/site';
+---
+
+<section id="como-funciona" class="como" aria-labelledby="como-funciona-titulo">
+  <div class="como__conteudo container secao">
+    <TituloSecao id="como-funciona-titulo" titulo={comoFunciona.titulo} texto={comoFunciona.texto} />
+    <ol class="como__passos" role="list">
+      {
+        comoFunciona.passos.map((passo) => (
+          <li class="passo">
+            <div class="passo__corpo">
+              <span class="passo__numero">{passo.numero}</span>
+              <h3 class="passo__titulo">{passo.titulo}</h3>
+              <p class="passo__texto">{passo.texto}</p>
+            </div>
+            <Faixa variante="cartao" />
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .como {
+    background: var(--cor-areia);
+  }
+
+  .como__conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .como__passos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .passo {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--raio-cartao);
+    background: var(--cor-creme);
+  }
+
+  .passo__corpo {
+    flex: 1 1 auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .passo__numero {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--cor-azul);
+    color: var(--cor-creme);
+    font-stretch: var(--largura-titulo);
+    font-weight: 800;
+    font-size: 26px;
+  }
+
+  .passo__titulo {
+    font-stretch: var(--largura-titulo);
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 1;
+  }
+
+  .passo__texto {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--cor-texto-apoio);
+  }
+
+  @media (min-width: 768px) {
+    .como__conteudo {
+      gap: 48px;
+    }
+
+    .como__passos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+      gap: 24px;
+    }
+
+    .passo__corpo {
+      padding: 32px;
+      gap: 16px;
+    }
+
+    .passo__numero {
+      width: 64px;
+      height: 64px;
+      font-size: 36px;
+    }
+
+    .passo__titulo {
+      font-size: 40px;
+    }
+
+    .passo__texto {
+      font-size: 18px;
+    }
+  }
+</style>

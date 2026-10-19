@@ -1,0 +1,39 @@
+:root {
+  --cor-azul: #13294b;
+  --cor-terracota: #b4532a;
+  --cor-terracota-claro: #e58a5f;
+  --cor-areia: #f2e8d7;
+  --cor-creme: #fbf6ec;
+  --cor-cafe: #2b1e17;
+
+  --cor-azul-grade: #1f3b68;
+  --cor-texto-apoio-no-azul: #c9d2df;
+  --cor-texto-apoio: #5e544c;
+  --cor-foto-pendente: #e9dcc4;
+  --cor-divisoria: #d9cbb3;
+  --cor-terracota-hover: #943f1e;
+  --cor-desativado: #e3d6bf;
+
+  --fonte: Archivo, 'Helvetica Neue', Helvetica, sans-serif;
+  --largura-marca: 125%;
+  --largura-titulo: 75%;
+  --largura-texto: 100%;
+
+  --raio-botao: 12px;
+  --raio-cartao: 14px;
+
+  --foco-cor: var(--cor-azul);
+  --foco-espessura: 3px;
+  --foco-afastamento: 3px;
+
+  --alvo-toque: 44px;
+
+  --conteudo-largura: 1248px;
+  --margem-lateral: 20px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --margem-lateral: 32px;
+  }
+}

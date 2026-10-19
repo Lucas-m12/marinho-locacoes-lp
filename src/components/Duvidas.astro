@@ -1,0 +1,110 @@
+---
+import TituloSecao from './ui/TituloSecao.astro';
+import { duvidas } from '../content/site';
+---
+
+<section id="duvidas" class="duvidas" aria-labelledby="duvidas-titulo">
+  <div class="duvidas__conteudo container secao">
+    <TituloSecao id="duvidas-titulo" titulo={duvidas.titulo} />
+    <div class="duvidas__lista">
+      {
+        duvidas.perguntas.map((item, indice) => (
+          <details class="pergunta" open={indice === 0}>
+            <summary class="pergunta__titulo">
+              {item.pergunta}
+              <span class="pergunta__sinal" aria-hidden="true">
+                +
+              </span>
+            </summary>
+            <p class="pergunta__resposta">{item.resposta}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .duvidas {
+    background: var(--cor-creme);
+  }
+
+  .duvidas__conteudo {
+    max-width: 880px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .duvidas__lista {
+    display: flex;
+    flex-direction: column;
+    border-top: 2px solid var(--cor-azul);
+  }
+
+  .pergunta {
+    border-bottom: 1px solid var(--cor-divisoria);
+  }
+
+  .pergunta__titulo {
+    min-height: 64px;
+    padding-block: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .pergunta[open] > .pergunta__titulo {
+    padding-bottom: 0;
+    min-height: 46px;
+  }
+
+  .pergunta__sinal {
+    flex: none;
+    font-stretch: var(--largura-titulo);
+    font-weight: 800;
+    font-size: 26px;
+    color: var(--cor-terracota);
+  }
+
+  .pergunta[open] .pergunta__sinal {
+    rotate: 45deg;
+  }
+
+  .pergunta__resposta {
+    margin: 10px 0 18px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--cor-texto-apoio);
+  }
+
+  @media (min-width: 768px) {
+    .duvidas__conteudo {
+      gap: 40px;
+    }
+
+    .pergunta__titulo {
+      min-height: 0;
+      padding-block: 22px;
+      gap: 16px;
+      font-size: 21px;
+    }
+
+    .pergunta[open] > .pergunta__titulo {
+      min-height: 0;
+    }
+
+    .pergunta__sinal {
+      font-size: 28px;
+    }
+
+    .pergunta__resposta {
+      max-width: 720px;
+      margin: 12px 0 22px;
+      font-size: 18px;
+    }
+  }
+</style>

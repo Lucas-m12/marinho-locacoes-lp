@@ -1,0 +1,146 @@
+---
+import Icon from './ui/Icon.astro';
+import logo from '../assets/marca/marinho-logo-negativo.svg';
+import { acessibilidade, contato, rodape } from '../content/site';
+---
+
+<footer class="rodape fundo-escuro">
+  <div class="rodape__conteudo container">
+    <div class="rodape__marca">
+      <img
+        class="rodape__logo"
+        src={logo.src}
+        width={logo.width}
+        height={logo.height}
+        alt={acessibilidade.logo}
+        loading="lazy"
+        decoding="async"
+      />
+      <p class="rodape__descricao">{rodape.descricao}</p>
+    </div>
+    <ul class="rodape__contatos" role="list">
+      <li class="rodape__contato rodape__contato--destaque">
+        <Icon name="whatsapp" size={17} label="WhatsApp" />
+        {contato.telefone}
+      </li>
+      <li class="rodape__contato">
+        <Icon name="site" size={17} label="Site" />
+        {contato.site}
+      </li>
+      <li>
+        <a class="rodape__contato rodape__link" href={contato.instagram.url} target="_blank" rel="noopener">
+          <Icon name="instagram" size={17} label="Instagram" />
+          {contato.instagram.usuario}
+        </a>
+      </li>
+      <li class="rodape__contato">{rodape.aviso}</li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  .rodape {
+    background: var(--cor-azul);
+    color: var(--cor-creme);
+  }
+
+  .rodape__conteudo {
+    padding-block: 40px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .rodape__marca {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .rodape__logo {
+    align-self: flex-start;
+    width: 200px;
+    height: 42px;
+  }
+
+  .rodape__descricao {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--cor-texto-apoio-no-azul);
+  }
+
+  .rodape__contatos {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 15px;
+  }
+
+  .rodape__contato {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--cor-texto-apoio-no-azul);
+  }
+
+  .rodape__contato :global(.icone) {
+    color: var(--cor-terracota-claro);
+  }
+
+  .rodape__contato--destaque {
+    font-weight: 600;
+    color: var(--cor-creme);
+  }
+
+  .rodape__link {
+    position: relative;
+    text-underline-offset: 4px;
+  }
+
+  .rodape__link::after {
+    content: '';
+    position: absolute;
+    inset: 50% 0 auto;
+    height: var(--alvo-toque);
+    translate: 0 -50%;
+  }
+
+  .rodape__link:hover {
+    color: var(--cor-creme);
+  }
+
+  @media (min-width: 768px) {
+    .rodape__conteudo {
+      padding-block: 56px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .rodape__marca {
+      gap: 14px;
+    }
+
+    .rodape__logo {
+      width: 260px;
+      height: 54px;
+    }
+
+    .rodape__descricao {
+      font-size: 16px;
+      line-height: normal;
+    }
+
+    .rodape__contatos {
+      gap: 8px;
+      font-size: 16px;
+    }
+
+    .rodape__contato :global(.icone) {
+      width: 18px;
+      height: 18px;
+    }
+  }
+</style>

@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import AreaAtendida from '../components/AreaAtendida.astro';
+import Cabecalho from '../components/Cabecalho.astro';
+import ChamadaFinal from '../components/ChamadaFinal.astro';
+import ComoFunciona from '../components/ComoFunciona.astro';
+import Diferenciais from '../components/Diferenciais.astro';
+import Duvidas from '../components/Duvidas.astro';
+import Equipamentos from '../components/Equipamentos.astro';
+import Rodape from '../components/Rodape.astro';
+import Topo from '../components/Topo.astro';
+---
+
+<Base>
+  <Cabecalho />
+  <main id="conteudo">
+    <Topo />
+    <ComoFunciona />
+    <Equipamentos />
+    <Diferenciais />
+    <AreaAtendida />
+    <Duvidas />
+    <ChamadaFinal />
+  </main>
+  <Rodape />
+</Base>

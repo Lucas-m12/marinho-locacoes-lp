@@ -1,0 +1,85 @@
+---
+import Botao from './ui/Botao.astro';
+import Icon from './ui/Icon.astro';
+import { chamadaFinal, contato } from '../content/site';
+---
+
+<section id="whatsapp" class="chamada fundo-escuro" aria-labelledby="chamada-titulo">
+  <div class="chamada__conteudo container">
+    <div class="chamada__texto">
+      <h2 id="chamada-titulo" class="chamada__titulo">{chamadaFinal.titulo}</h2>
+      <p class="chamada__telefone">
+        <Icon name="whatsapp" size={22} label="WhatsApp" />
+        {contato.telefone}
+      </p>
+    </div>
+    <Botao tamanho="final" variante="azul">{chamadaFinal.botao}</Botao>
+  </div>
+</section>
+
+<style>
+  .chamada {
+    background: var(--cor-terracota);
+    color: var(--cor-creme);
+  }
+
+  .chamada__conteudo {
+    padding-block: 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .chamada__texto {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .chamada__titulo {
+    font-stretch: var(--largura-titulo);
+    font-weight: 800;
+    font-size: 42px;
+    line-height: 0.95;
+  }
+
+  .chamada__telefone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  @media (min-width: 768px) {
+    .chamada__conteudo {
+      padding-block: 88px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px 48px;
+    }
+
+    .chamada__texto {
+      flex: 1 1 520px;
+      gap: 14px;
+    }
+
+    .chamada__titulo {
+      font-size: clamp(44px, 5vw, 76px);
+      text-wrap: balance;
+    }
+
+    .chamada__telefone {
+      gap: 12px;
+      font-size: 22px;
+    }
+
+    .chamada__telefone :global(.icone) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+</style>

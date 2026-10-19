@@ -1,0 +1,148 @@
+---
+import { Image } from 'astro:assets';
+import type { Foto } from '../../content/site';
+
+type Variante = 'topo' | 'equipamento' | 'mapa';
+
+interface Props {
+  foto: Foto;
+  variante: Variante;
+}
+
+const { foto, variante } = Astro.props;
+
+const resolucoes: Record<Variante, { widths: number[]; sizes: string }> = {
+  topo: {
+    widths: [360, 680, 1000, 1360],
+    sizes: '(min-width: 1052px) 340px, (min-width: 768px) calc(100vw - 144px), calc(100vw - 88px)',
+  },
+  equipamento: {
+    widths: [208, 320, 640],
+    sizes: '(min-width: 768px) 300px, 104px',
+  },
+  mapa: {
+    widths: [400, 800, 1200],
+    sizes: '(min-width: 1248px) 568px, (min-width: 768px) calc(100vw - 64px), calc(100vw - 40px)',
+  },
+};
+---
+
+<div class:list={['foto', `foto--${variante}`, foto.imagem ? 'foto--imagem' : 'foto--pendente']}>
+  {
+    foto.imagem ? (
+      <Image
+        src={foto.imagem}
+        alt={foto.alt}
+        widths={resolucoes[variante].widths}
+        sizes={resolucoes[variante].sizes}
+        priority={variante === 'topo'}
+      />
+    ) : foto.marcadorCelular ? (
+      <>
+        <span class="foto__marcador foto__marcador--desktop">{foto.marcador}</span>
+        <span class="foto__marcador foto__marcador--celular">{foto.marcadorCelular}</span>
+      </>
+    ) : (
+      <span class="foto__marcador">{foto.marcador}</span>
+    )
+  }
+</div>
+
+<style>
+  .foto {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-stretch: var(--largura-titulo);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .foto--imagem {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .foto--imagem :global(img) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .foto__marcador--desktop {
+    display: none;
+  }
+
+  .foto--topo.foto--pendente {
+    padding: 20px;
+    background: var(--cor-azul-grade);
+    border: 2px dashed var(--cor-texto-apoio-no-azul);
+    color: var(--cor-texto-apoio-no-azul);
+    font-size: 17px;
+  }
+
+  .foto--equipamento {
+    background: var(--cor-foto-pendente);
+    color: var(--cor-texto-apoio);
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  .foto--equipamento.foto--pendente {
+    padding: 8px;
+  }
+
+  .foto--mapa {
+    border-radius: var(--raio-cartao);
+    background: var(--cor-foto-pendente);
+    color: var(--cor-texto-apoio);
+    font-size: 17px;
+  }
+
+  .foto--mapa.foto--pendente {
+    padding: 20px;
+    border: 2px dashed var(--cor-texto-apoio);
+  }
+
+  @media (min-width: 768px) {
+    .foto__marcador--desktop {
+      display: block;
+    }
+
+    .foto__marcador--celular {
+      display: none;
+    }
+
+    .foto--topo.foto--pendente {
+      padding: 32px;
+      border-width: 3px;
+      font-size: 22px;
+    }
+
+    .foto--topo .foto__marcador {
+      max-width: 300px;
+    }
+
+    .foto--equipamento {
+      font-size: 16px;
+      line-height: 1.3;
+    }
+
+    .foto--equipamento.foto--pendente {
+      padding: 20px;
+    }
+
+    .foto--mapa {
+      font-size: 20px;
+    }
+
+    .foto--mapa.foto--pendente {
+      padding: 32px;
+    }
+  }
+</style>

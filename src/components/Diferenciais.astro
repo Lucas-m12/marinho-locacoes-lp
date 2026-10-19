@@ -1,0 +1,107 @@
+---
+import TituloSecao from './ui/TituloSecao.astro';
+import { diferenciais } from '../content/site';
+---
+
+<section id="diferenciais" class="diferenciais fundo-escuro" aria-labelledby="diferenciais-titulo">
+  <div class="diferenciais__conteudo container secao">
+    <TituloSecao id="diferenciais-titulo" titulo={diferenciais.titulo} fundo="azul" />
+    <ul class="diferenciais__lista" role="list">
+      {
+        diferenciais.itens.map((item) => (
+          <li class="diferencial">
+            <div class="diferencial__cabeca">
+              <span class="diferencial__marca" aria-hidden="true" />
+              <h3 class="diferencial__titulo">{item.titulo}</h3>
+            </div>
+            <p class="diferencial__texto">{item.texto}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .diferenciais {
+    background: var(--cor-azul);
+    color: var(--cor-creme);
+  }
+
+  .diferenciais__conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .diferenciais__lista {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .diferencial {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .diferencial__cabeca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .diferencial__marca {
+    width: 12px;
+    height: 12px;
+    flex: none;
+    background: var(--cor-terracota-claro);
+  }
+
+  .diferencial__titulo {
+    font-stretch: var(--largura-titulo);
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 1.05;
+  }
+
+  .diferencial__texto {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--cor-texto-apoio-no-azul);
+  }
+
+  @media (min-width: 768px) {
+    .diferenciais__conteudo {
+      gap: 48px;
+    }
+
+    .diferenciais__lista {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+      gap: 40px;
+    }
+
+    .diferencial {
+      gap: 14px;
+    }
+
+    .diferencial__cabeca {
+      gap: 14px;
+    }
+
+    .diferencial__marca {
+      width: 14px;
+      height: 14px;
+    }
+
+    .diferencial__titulo {
+      font-size: 32px;
+    }
+
+    .diferencial__texto {
+      font-size: 18px;
+    }
+  }
+</style>

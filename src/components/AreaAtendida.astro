@@ -1,0 +1,81 @@
+---
+import Foto from './ui/Foto.astro';
+import TituloSecao from './ui/TituloSecao.astro';
+import { areaAtendida } from '../content/site';
+---
+
+<section id="area" class="area" aria-labelledby="area-titulo">
+  <div class="area__conteudo container secao">
+    <div class="area__texto">
+      <TituloSecao id="area-titulo" titulo={areaAtendida.titulo} solto />
+      <p class="area__regiao">{areaAtendida.regiao}</p>
+      <p class="area__observacao">{areaAtendida.texto}</p>
+    </div>
+    <div class="area__mapa">
+      <Foto foto={areaAtendida.mapa} variante="mapa" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .area {
+    background: var(--cor-areia);
+  }
+
+  .area__conteudo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .area__texto {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .area__regiao {
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .area__observacao {
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--cor-texto-apoio);
+  }
+
+  .area__mapa {
+    height: 220px;
+    display: flex;
+  }
+
+  @media (min-width: 768px) {
+    .area__conteudo {
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .area__texto {
+      flex: 1 1 420px;
+      gap: 18px;
+    }
+
+    .area__regiao {
+      font-size: 20px;
+    }
+
+    .area__observacao {
+      font-size: 18px;
+    }
+
+    .area__mapa {
+      flex: 1 1 420px;
+      min-width: 0;
+      height: 360px;
+    }
+  }
+</style>
