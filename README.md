@@ -1,6 +1,6 @@
 # Marinho Locações
 
-Landing page de [marinholocacoes.com](https://marinholocacoes.com): locação de equipamentos para obra em Cajueiro (AL) e região. São andaimes, escoras de laje, ferramentas elétricas, carrocinha e o que mais a obra precisar.
+Landing page de [marinholocacoes.com](https://marinholocacoes.com): locação de equipamentos para obra em Cajueiro (AL) e região. São andaimes, ferramentas elétricas, carrocinha e o que mais a obra precisar.
 
 A empresa não tem loja aberta, e todo pedido acontece pelo WhatsApp. O único objetivo da página é levar a pessoa a pedir orçamento por lá.
 

@@ -66,6 +66,7 @@ Fonte Archivo (variável, eixos `wdth` e `wght`), via Google Fonts:
 - Já resolvidos: `[REGRAS DE CAUÇÃO E DOCUMENTOS]` e `[POLÍTICA DE TROCA]`. As respostas estão no FAQ (`duvidas` em `src/content/site.ts`), cada uma com link para o PDF da política em `public/`.
 - Pergunta do FAQ pode ter `link` (`rotulo` + `href`), que aparece num parágrafo próprio abaixo da resposta, com o ícone `documento`, em nova aba (`target="_blank"`, `rel="noopener"`, `type="application/pdf"`).
 - Nunca descreva a empresa como "ferramentas e andaimes": o catálogo vai crescer. Use "equipamentos para obra".
+- Escoras de laje não estão no catálogo por enquanto. Não cite escoras nem laje em nenhum lugar do site (textos, meta description, Open Graph, JSON-LD, alt, `referencia/`) até o cliente pedir.
 - Não existe loja aberta. Todo pedido é pelo WhatsApp: todos os botões de orçamento apontam para `contato.whatsapp` (https://wa.me/5582999636057), com `target="_blank"` e `rel="noopener"`. Use o componente `<Botao>`.
 - O JSON-LD `LocalBusiness` leva só o que é real: nome, telefone, url, `areaServed` e `sameAs` (Instagram).
 - Use os textos exatamente como estão em `referencia/design/`.

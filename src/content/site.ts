@@ -37,7 +37,7 @@ export const contato = {
 export const seo = {
   titulo: 'Locação de equipamentos para obra em Cajueiro, AL · Marinho Locações',
   descricao:
-    'Locação de equipamentos para obra em Cajueiro, AL e região: andaimes, escoras de laje, ferramentas elétricas, carrocinha e mais. Entrega e coleta na obra. Orçamento pelo WhatsApp.',
+    'Locação de equipamentos para obra em Cajueiro, AL e região: andaimes, ferramentas elétricas, carrocinha e mais. Entrega e coleta na obra. Orçamento pelo WhatsApp.',
   imagemAlt: 'Logo da Marinho Locações sobre fundo azul-marinho',
 };
 
@@ -63,7 +63,7 @@ export const topo = {
   local: 'Cajueiro e região',
   titulo: 'Alugue o que sua obra precisa.',
   texto:
-    'Andaimes, escoras de laje, ferramentas elétricas, carrocinha e o que mais a obra precisar. Tudo revisado, com entrega e coleta na obra.',
+    'Andaimes, ferramentas elétricas, carrocinha e o que mais a obra precisar. Tudo revisado, com entrega e coleta na obra.',
   botao: 'Pedir orçamento no WhatsApp',
   linkSecundario: { rotulo: 'Ver como funciona', href: '#como-funciona' } satisfies Link,
   foto: {
@@ -109,15 +109,6 @@ export const equipamentos = {
         marcador: '[FOTO: andaime montado]',
         marcadorCelular: '[FOTO]',
         alt: 'Andaime montado',
-      },
-    },
-    {
-      nome: 'Escoras de laje',
-      texto: 'Vai bater laje? Alugue as escoras.',
-      foto: {
-        marcador: '[FOTO: escoras sob a forma da laje]',
-        marcadorCelular: '[FOTO]',
-        alt: 'Escoras sob a forma da laje',
       },
     },
     {

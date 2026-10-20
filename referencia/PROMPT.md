@@ -1,7 +1,7 @@
 Quero implementar a landing page da Marinho Locações (marinholocacoes.com). O design já está pronto e aprovado; seu trabalho é transformar esse design em um site de verdade, fiel ao layout.
 
 ## Contexto
-- Empresa familiar de locação de equipamentos para obra em Cajueiro (AL) e região: andaimes, escoras de laje, ferramentas elétricas, carrocinha e o que mais a obra precisar. O catálogo vai crescer, então nunca descreva a empresa como "ferramentas e andaimes".
+- Empresa familiar de locação de equipamentos para obra em Cajueiro (AL) e região: andaimes, ferramentas elétricas, carrocinha e o que mais a obra precisar. O catálogo vai crescer, então nunca descreva a empresa como "ferramentas e andaimes".
 - Não tem loja aberta: todo pedido acontece pelo WhatsApp. O único objetivo da página é levar a pessoa a pedir orçamento no WhatsApp.
 - Público: pedreiros, pintores, eletricistas, pequenos empreiteiros e gente reformando a casa. Quase todos vão abrir no celular.
 

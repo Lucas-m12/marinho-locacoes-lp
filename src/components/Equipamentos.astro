@@ -187,8 +187,12 @@ import { contato, equipamentos } from '../content/site';
     }
 
     .equipamentos__lista {
+      --quatro-colunas-a-partir-de: calc(4 * 220px + 3 * 20px);
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(clamp(100% / 5, (var(--quatro-colunas-a-partir-de) - 100%) * 999, 100% / 3), 1fr)
+      );
       gap: 20px;
     }
 
