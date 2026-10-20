@@ -43,7 +43,7 @@ referencia/             design aprovado (desktop 1440 px, celular 390 px e compo
 
 Todos os textos, links, telefone, Instagram e fotos ficam em `src/content/site.ts`. Para mudar o conteúdo não é preciso mexer no layout.
 
-Os marcadores entre colchetes, como `[CONDIÇÕES DE ENTREGA]` e `[TABELA DE PREÇOS]`, indicam informações que ainda faltam. Eles ficam visíveis de propósito até o dado real chegar. Não invente preços, endereço, horários, depoimentos nem números.
+Não invente preços, endereço, horários, depoimentos nem números. As referências ainda trazem os marcadores `[CONDIÇÕES DE ENTREGA]` e `[TABELA DE PREÇOS]`, mas o site não os mostra.
 
 ### Fotos
 

@@ -62,7 +62,7 @@ Fonte Archivo (variável, eixos `wdth` e `wght`), via Google Fonts:
 ## Conteúdo: não inventar dados
 
 - Não invente preços, endereço, horários, depoimentos, números nem municípios.
-- Os marcadores pendentes ficam visíveis até o cliente mandar o dado real: `[CONDIÇÕES DE ENTREGA]`, `[TABELA DE PREÇOS]`.
+- As referências ainda trazem `[CONDIÇÕES DE ENTREGA]` e `[TABELA DE PREÇOS]` no FAQ, mas o site não mostra esses marcadores: as respostas de entrega e de preço terminam sem eles. Não os coloque de volta.
 - Já resolvidos: `[REGRAS DE CAUÇÃO E DOCUMENTOS]` e `[POLÍTICA DE TROCA]`. As respostas estão no FAQ (`duvidas` em `src/content/site.ts`), cada uma com link para o PDF da política em `public/`.
 - Também resolvidos: `[MUNICÍPIOS]` (`areaAtendida.regiao` e `empresa.municipiosAtendidos`), `[FOTO: …]` (ilustrações, ver "Fotos e ilustrações") e `[MAPA: …]` (ver "Mapa").
 - Pergunta do FAQ pode ter `link` (`rotulo` + `href`), que aparece num parágrafo próprio abaixo da resposta, com o ícone `documento`, em nova aba (`target="_blank"`, `rel="noopener"`, `type="application/pdf"`).
@@ -103,6 +103,7 @@ Sem `imagem`, o componente `Foto` mostra a ilustração com `object-fit: contain
 ## Mapa
 
 - `MapaAreaAtendida` insere inline (`?raw` + `set:html`) os SVGs de `src/assets/mapa/`, para os nomes saírem na Archivo da página. A versão celular aparece abaixo de 768 px e a desktop a partir de 768 px. A outra fica com `display: none`, para o leitor de tela ler só uma.
+- A caixa do mapa segue a proporção dos dois SVGs (`aspect-ratio: 8 / 5`), para nunca cortar nomes nem a legenda: cerca de 220 px de altura em 390 px e 355 px em 1440 px. Sem suporte a `aspect-ratio` (Safari 14), ela fica com 220 px no celular e 360 px a partir de 768 px. Se o mapa for gerado em outra proporção, ajuste o `aspect-ratio`.
 - O mapa vem da malha municipal do IBGE. Se a lista de municípios mudar, gere os dois SVGs de novo e troque os arquivos em `referencia/assets/mapa/` e `src/assets/mapa/`. Nunca edite o SVG à mão. Atualize também `areaAtendida.regiao` e `empresa.municipiosAtendidos`.
 
 ## Ícones

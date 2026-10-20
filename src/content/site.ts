@@ -175,7 +175,7 @@ export const diferenciais = {
 export const areaAtendida = {
   titulo: 'Área atendida',
   regiao: 'Cajueiro e região: Capela, Viçosa, Chã Preta, Paulo Jacinto, Mar Vermelho, Maribondo, Pindoba, Atalaia, Pilar e Murici.',
-  texto: 'A obra fica fora dessa área ? Pergunte no WhatsApp antes de desistir.',
+  texto: 'A obra fica fora dessa lista? Pergunte no WhatsApp antes de desistir.',
 };
 
 export const duvidas = {

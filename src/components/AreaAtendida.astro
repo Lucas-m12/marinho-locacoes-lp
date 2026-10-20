@@ -78,4 +78,11 @@ import { areaAtendida } from '../content/site';
       height: 360px;
     }
   }
+
+  @supports (aspect-ratio: 8 / 5) {
+    .area__mapa {
+      height: auto;
+      aspect-ratio: 8 / 5;
+    }
+  }
 </style>
