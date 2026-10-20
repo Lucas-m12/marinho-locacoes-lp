@@ -1,0 +1,37 @@
+---
+import mapaCelular from '../../assets/mapa/mapa-area-atendida-celular.svg?raw';
+import mapaDesktop from '../../assets/mapa/mapa-area-atendida-desktop.svg?raw';
+---
+
+<div class="mapa">
+  <div class="mapa__versao mapa__versao--celular" set:html={mapaCelular} />
+  <div class="mapa__versao mapa__versao--desktop" set:html={mapaDesktop} />
+</div>
+
+<style>
+  .mapa {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: var(--raio-cartao);
+    background: var(--cor-texto-apoio-no-azul);
+  }
+
+  .mapa__versao {
+    height: 100%;
+  }
+
+  .mapa__versao--desktop {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .mapa__versao--celular {
+      display: none;
+    }
+
+    .mapa__versao--desktop {
+      display: block;
+    }
+  }
+</style>

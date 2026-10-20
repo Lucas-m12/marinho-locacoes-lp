@@ -1,8 +1,12 @@
 import type { ImageMetadata } from 'astro';
+import andaimeTopo from '../assets/ilustracoes/andaime-topo.svg';
+import andaime from '../assets/ilustracoes/andaime.svg';
+import ferramentas from '../assets/ilustracoes/ferramentas.svg';
+import carrocinha from '../assets/ilustracoes/carrocinha.svg';
 
 export type Foto = {
-  marcador: string;
-  marcadorCelular?: string;
+  fotoDescricao: string;
+  ilustracao: ImageMetadata;
   imagem?: ImageMetadata;
   alt: string;
 };
@@ -20,7 +24,8 @@ export type Pergunta = {
 
 export const empresa = {
   nome: 'Marinho Locações',
-  areaAtendida: 'Cajueiro, AL e região',
+  estado: 'Alagoas',
+  municipiosAtendidos: ['Cajueiro', 'Capela', 'Viçosa', 'Chã Preta', 'Paulo Jacinto', 'Atalaia', 'Pilar', 'Murici'],
 };
 
 export const contato = {
@@ -67,8 +72,8 @@ export const topo = {
   botao: 'Pedir orçamento no WhatsApp',
   linkSecundario: { rotulo: 'Ver como funciona', href: '#como-funciona' } satisfies Link,
   foto: {
-    marcador: '[FOTO: andaime montado em obra da região, luz natural]',
-    marcadorCelular: '[FOTO: andaime montado em obra da região]',
+    fotoDescricao: 'andaime montado em obra da região, luz natural',
+    ilustracao: andaimeTopo,
     alt: 'Andaime montado em obra da região',
   } satisfies Foto,
 };
@@ -106,8 +111,8 @@ export const equipamentos = {
       nome: 'Andaimes',
       texto: 'Para pintura, reboco e fachada.',
       foto: {
-        marcador: '[FOTO: andaime montado]',
-        marcadorCelular: '[FOTO]',
+        fotoDescricao: 'andaime montado',
+        ilustracao: andaime,
         alt: 'Andaime montado',
       },
     },
@@ -115,8 +120,8 @@ export const equipamentos = {
       nome: 'Ferramentas elétricas',
       texto: 'Para o serviço de poucos dias, sem precisar comprar.',
       foto: {
-        marcador: '[FOTO: ferramenta elétrica em uso]',
-        marcadorCelular: '[FOTO]',
+        fotoDescricao: 'ferramenta elétrica em uso',
+        ilustracao: ferramentas,
         alt: 'Ferramenta elétrica em uso',
       },
     },
@@ -124,8 +129,8 @@ export const equipamentos = {
       nome: 'Carrocinha',
       texto: 'Para levar material até a obra.',
       foto: {
-        marcador: '[FOTO: carrocinha engatada]',
-        marcadorCelular: '[FOTO]',
+        fotoDescricao: 'carrocinha engatada',
+        ilustracao: carrocinha,
         alt: 'Carrocinha engatada',
       },
     },
@@ -157,12 +162,8 @@ export const diferenciais = {
 
 export const areaAtendida = {
   titulo: 'Área atendida',
-  regiao: 'Cajueiro e região',
+  regiao: 'Cajueiro e região: Capela, Viçosa, Chã Preta, Paulo Jacinto, Atalaia, Pilar e Murici.',
   texto: 'A obra fica fora dessa área ? Pergunte no WhatsApp antes de desistir.',
-  mapa: {
-    marcador: '[MAPA: área atendida a partir de Cajueiro]',
-    alt: 'Mapa da área atendida a partir de Cajueiro',
-  } satisfies Foto,
 };
 
 export const duvidas = {

@@ -1,5 +1,5 @@
 ---
-import Foto from './ui/Foto.astro';
+import MapaAreaAtendida from './ui/MapaAreaAtendida.astro';
 import TituloSecao from './ui/TituloSecao.astro';
 import { areaAtendida } from '../content/site';
 ---
@@ -12,7 +12,7 @@ import { areaAtendida } from '../content/site';
       <p class="area__observacao">{areaAtendida.texto}</p>
     </div>
     <div class="area__mapa">
-      <Foto foto={areaAtendida.mapa} variante="mapa" />
+      <MapaAreaAtendida />
     </div>
   </div>
 </section>

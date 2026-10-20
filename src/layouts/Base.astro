@@ -14,7 +14,11 @@ const dadosEstruturados = {
   name: empresa.nome,
   telephone: contato.telefoneInternacional,
   url: urlSite.href,
-  areaServed: empresa.areaAtendida,
+  areaServed: empresa.municipiosAtendidos.map((municipio) => ({
+    '@type': 'City',
+    name: municipio,
+    containedInPlace: { '@type': 'State', name: empresa.estado },
+  })),
   sameAs: [contato.instagram.url],
 };
 ---

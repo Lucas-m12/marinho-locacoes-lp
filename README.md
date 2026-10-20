@@ -43,23 +43,25 @@ referencia/             design aprovado (desktop 1440 px, celular 390 px e compo
 
 Todos os textos, links, telefone, Instagram e fotos ficam em `src/content/site.ts`. Para mudar o conteúdo não é preciso mexer no layout.
 
-Os marcadores entre colchetes, como `[MUNICÍPIOS]` e `[TABELA DE PREÇOS]`, indicam informações que ainda faltam. Eles ficam visíveis de propósito até o dado real chegar. Não invente preços, endereço, horários, depoimentos nem números.
+Os marcadores entre colchetes, como `[CONDIÇÕES DE ENTREGA]` e `[TABELA DE PREÇOS]`, indicam informações que ainda faltam. Eles ficam visíveis de propósito até o dado real chegar. Não invente preços, endereço, horários, depoimentos nem números.
 
 ### Fotos
 
-Para colocar uma foto no lugar de um marcador `[FOTO: …]`:
+Enquanto não há foto real, o topo e os cartões de equipamento mostram ilustrações provisórias. Não use foto de banco de imagem nem gerada por IA. O campo `fotoDescricao` guarda o que falta fotografar.
+
+Para colocar uma foto no lugar da ilustração:
 
 1. Salve o arquivo em `src/assets/fotos/`.
 2. Importe-o no topo de `src/content/site.ts`.
 3. Preencha `imagem` na foto correspondente e revise o `alt`.
 
 ```ts
-import andaime from '../assets/fotos/andaime.jpg';
+import fotoAndaime from '../assets/fotos/andaime.jpg';
 
 foto: {
-  marcador: '[FOTO: andaime montado]',
-  marcadorCelular: '[FOTO]',
-  imagem: andaime,
+  fotoDescricao: 'andaime montado',
+  ilustracao: andaime,
+  imagem: fotoAndaime,
   alt: 'Andaime montado em obra em Cajueiro',
 },
 ```
