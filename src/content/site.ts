@@ -25,7 +25,19 @@ export type Pergunta = {
 export const empresa = {
   nome: 'Marinho Locações',
   estado: 'Alagoas',
-  municipiosAtendidos: ['Cajueiro', 'Capela', 'Viçosa', 'Chã Preta', 'Paulo Jacinto', 'Atalaia', 'Pilar', 'Murici'],
+  municipiosAtendidos: [
+    'Cajueiro',
+    'Capela',
+    'Viçosa',
+    'Chã Preta',
+    'Paulo Jacinto',
+    'Mar Vermelho',
+    'Maribondo',
+    'Pindoba',
+    'Atalaia',
+    'Pilar',
+    'Murici',
+  ],
 };
 
 export const contato = {
@@ -162,7 +174,7 @@ export const diferenciais = {
 
 export const areaAtendida = {
   titulo: 'Área atendida',
-  regiao: 'Cajueiro e região: Capela, Viçosa, Chã Preta, Paulo Jacinto, Atalaia, Pilar e Murici.',
+  regiao: 'Cajueiro e região: Capela, Viçosa, Chã Preta, Paulo Jacinto, Mar Vermelho, Maribondo, Pindoba, Atalaia, Pilar e Murici.',
   texto: 'A obra fica fora dessa área ? Pergunte no WhatsApp antes de desistir.',
 };
 
